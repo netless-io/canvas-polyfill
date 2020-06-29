@@ -83,7 +83,7 @@ function canvasPolyfill() {
                 if (typeof a === "object" || typeof a === "undefined") {
                     let { a: aa, b, c, d, e, f } = a;
                     this._t2stack[this._t2stack.length - 1] = { a: aa, b: b, c: c, d: d, e: e, f: f };
-                    setTransform.call(this, a, b, c, d, e, f);
+                    setTransform.call(this, aa, b, c, d, e, f);
                 } else {
                     this._t2stack[this._t2stack.length - 1] = { a: a, b: b, c: c, d: d, e: e, f: f };
                     setTransform.call(this, a, b, c, d, e, f);
