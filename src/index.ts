@@ -73,7 +73,8 @@ function canvasPolyfill() {
             }
         }();
         CanvasRenderingContext2D.prototype.setTransform = function() {
-            var setTransform = CanvasRenderingContext2D.prototype.setTransform;
+            // old browser only accept six parameters
+            var setTransform = CanvasRenderingContext2D.prototype.setTransform as (a: number, b: number, c: number, d: number, e: number, f: number) => void;
             return function (a: number, b: number, c: number, d: number, e: number, f: number) {
                 if (!this._t2stack) {
                     this._t2stack = [{}];
@@ -82,10 +83,10 @@ function canvasPolyfill() {
                 if (typeof a === "object" || typeof a === "undefined") {
                     let { a: aa, b, c, d, e, f } = a;
                     this._t2stack[this._t2stack.length - 1] = { a: aa, b: b, c: c, d: d, e: e, f: f };
-                    setTransform.call(this, a);
+                    setTransform.call(this, a, b, c, d, e, f);
                 } else {
                     this._t2stack[this._t2stack.length - 1] = { a: a, b: b, c: c, d: d, e: e, f: f };
-                    setTransform.call(this, {a, b, c, d, e, f});
+                    setTransform.call(this, a, b, c, d, e, f);
                 }
             } as any;
         }();
