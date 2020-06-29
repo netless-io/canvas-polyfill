@@ -1,0 +1,19 @@
+{
+  "name": "@netless/canvas-polyfill",
+  "version": "0.0.1",
+  "description": "a polyfill for canvas getTransform, ellipse, resetTransform API",
+  "main": "/dist/index.js",
+  "keywords": [
+    "canvas",
+    "polyfill",
+    "getTransform"
+  ],
+  "author": "leavesster",
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}

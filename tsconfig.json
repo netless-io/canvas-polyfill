@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"outDir": "./dist/",
+		"strictNullChecks": true,
+		"moduleResolution": "node",
+		"strict": true,
+		"baseUrl": "./src",
+		"lib": [
+			"es2015",
+			"dom"
+		],
+		"removeComments": true,
+		"alwaysStrict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": false,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true
+	},
+}
